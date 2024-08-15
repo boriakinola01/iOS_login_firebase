@@ -16,6 +16,8 @@
 		91C921BE2C6CBFE000F92FEA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 91C921BD2C6CBFE000F92FEA /* FirebaseAnalytics */; };
 		91C921C02C6CBFE000F92FEA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 91C921BF2C6CBFE000F92FEA /* FirebaseAuth */; };
 		91C921C32C6CDF6600F92FEA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921C22C6CDF6600F92FEA /* LoginView.swift */; };
+		91C921C52C6E0C5100F92FEA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921C42C6E0C5100F92FEA /* Constants.swift */; };
+		91C921C82C6E12B900F92FEA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 91C921C72C6E12B900F92FEA /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		91C921B82C6CB72F00F92FEA /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		91C921BA2C6CBE0300F92FEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		91C921C22C6CDF6600F92FEA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		91C921C42C6E0C5100F92FEA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		91C921C72C6E12B900F92FEA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				91C921AE2C6CB33100F92FEA /* Assets.xcassets */,
 				91C921B02C6CB33100F92FEA /* Preview Content */,
 				91C921C22C6CDF6600F92FEA /* LoginView.swift */,
+				91C921C42C6E0C5100F92FEA /* Constants.swift */,
+				91C921C72C6E12B900F92FEA /* .gitignore */,
 			);
 			path = iOS_login_firebase;
 			sourceTree = "<group>";
@@ -98,6 +104,7 @@
 				91C921A32C6CB32700F92FEA /* Sources */,
 				91C921A42C6CB32700F92FEA /* Frameworks */,
 				91C921A52C6CB32700F92FEA /* Resources */,
+				91C921C62C6E0EB600F92FEA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -153,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91C921C82C6E12B900F92FEA /* .gitignore in Resources */,
 				91C921B22C6CB33100F92FEA /* Preview Assets.xcassets in Resources */,
 				91C921AF2C6CB33100F92FEA /* Assets.xcassets in Resources */,
 				91C921BB2C6CBE0300F92FEA /* GoogleService-Info.plist in Resources */,
@@ -161,11 +169,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		91C921C62C6E0EB600F92FEA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Path to Constants.swift\nCONSTANTS_SWIFT=\"${PROJECT_DIR}/Constants.swift>\"\n\n# Extract the FIREBASE_API_KEY from Constants.swift\nAPI_KEY=$(grep 'let FIREBASE_API_KEY' \"$CONSTANTS_SWIFT\" | awk -F'\"' '{print $2}')\n\n# Update GoogleServices-Info.plist with the API_KEY\nPLIST=\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\n\nif [ -n \"$API_KEY\" ]; then\n    /usr/libexec/PlistBuddy -c \"Set :API_KEY $API_KEY\" \"$PLIST\"\nelse\n    echo \"API Key not found. Please check Constants.swift\"\n    exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		91C921A32C6CB32700F92FEA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91C921C52C6E0C5100F92FEA /* Constants.swift in Sources */,
 				91C921AD2C6CB32700F92FEA /* ContentView.swift in Sources */,
 				91C921AB2C6CB32700F92FEA /* iOS_login_firebaseApp.swift in Sources */,
 				91C921C32C6CDF6600F92FEA /* LoginView.swift in Sources */,
