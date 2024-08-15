@@ -20,7 +20,7 @@ struct LoginView: View {
                     .background(Color.blue)
                     .cornerRadius(10)
             }
-            
+            Spacer()
         }
         .padding()
         .navigationTitle("Sign in")

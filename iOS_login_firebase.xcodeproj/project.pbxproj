@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		91C921AB2C6CB32700F92FEA /* iOS_login_firebaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921AA2C6CB32700F92FEA /* iOS_login_firebaseApp.swift */; };
-		91C921AD2C6CB32700F92FEA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921AC2C6CB32700F92FEA /* ContentView.swift */; };
 		91C921AF2C6CB33100F92FEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91C921AE2C6CB33100F92FEA /* Assets.xcassets */; };
 		91C921B22C6CB33100F92FEA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91C921B12C6CB33100F92FEA /* Preview Assets.xcassets */; };
 		91C921B92C6CB72F00F92FEA /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921B82C6CB72F00F92FEA /* ContentViewModel.swift */; };
@@ -18,12 +17,14 @@
 		91C921C32C6CDF6600F92FEA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921C22C6CDF6600F92FEA /* LoginView.swift */; };
 		91C921C52C6E0C5100F92FEA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921C42C6E0C5100F92FEA /* Constants.swift */; };
 		91C921C82C6E12B900F92FEA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 91C921C72C6E12B900F92FEA /* .gitignore */; };
+		91C921CA2C6E194E00F92FEA /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921C92C6E194E00F92FEA /* Util.swift */; };
+		91C921CD2C6E37A300F92FEA /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921CC2C6E37A300F92FEA /* StartView.swift */; };
+		91C921CF2C6E391600F92FEA /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921CE2C6E391600F92FEA /* HomePageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		91C921A72C6CB32700F92FEA /* iOS_login_firebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_login_firebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C921AA2C6CB32700F92FEA /* iOS_login_firebaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_login_firebaseApp.swift; sourceTree = "<group>"; };
-		91C921AC2C6CB32700F92FEA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		91C921AE2C6CB33100F92FEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91C921B12C6CB33100F92FEA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		91C921B82C6CB72F00F92FEA /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
@@ -31,6 +32,9 @@
 		91C921C22C6CDF6600F92FEA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		91C921C42C6E0C5100F92FEA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		91C921C72C6E12B900F92FEA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		91C921C92C6E194E00F92FEA /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		91C921CC2C6E37A300F92FEA /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		91C921CE2C6E391600F92FEA /* HomePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,15 +70,14 @@
 		91C921A92C6CB32700F92FEA /* iOS_login_firebase */ = {
 			isa = PBXGroup;
 			children = (
+				91C921CB2C6E366400F92FEA /* UI */,
 				91C921AA2C6CB32700F92FEA /* iOS_login_firebaseApp.swift */,
-				91C921AC2C6CB32700F92FEA /* ContentView.swift */,
 				91C921BA2C6CBE0300F92FEA /* GoogleService-Info.plist */,
-				91C921B82C6CB72F00F92FEA /* ContentViewModel.swift */,
 				91C921AE2C6CB33100F92FEA /* Assets.xcassets */,
 				91C921B02C6CB33100F92FEA /* Preview Content */,
-				91C921C22C6CDF6600F92FEA /* LoginView.swift */,
 				91C921C42C6E0C5100F92FEA /* Constants.swift */,
 				91C921C72C6E12B900F92FEA /* .gitignore */,
+				91C921C92C6E194E00F92FEA /* Util.swift */,
 			);
 			path = iOS_login_firebase;
 			sourceTree = "<group>";
@@ -94,6 +97,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		91C921CB2C6E366400F92FEA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				91C921C22C6CDF6600F92FEA /* LoginView.swift */,
+				91C921B82C6CB72F00F92FEA /* ContentViewModel.swift */,
+				91C921CE2C6E391600F92FEA /* HomePageView.swift */,
+				91C921CC2C6E37A300F92FEA /* StartView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -104,7 +118,6 @@
 				91C921A32C6CB32700F92FEA /* Sources */,
 				91C921A42C6CB32700F92FEA /* Frameworks */,
 				91C921A52C6CB32700F92FEA /* Resources */,
-				91C921C62C6E0EB600F92FEA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -169,36 +182,18 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		91C921C62C6E0EB600F92FEA /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Path to Constants.swift\nCONSTANTS_SWIFT=\"${PROJECT_DIR}/Constants.swift>\"\n\n# Extract the FIREBASE_API_KEY from Constants.swift\nAPI_KEY=$(grep 'let FIREBASE_API_KEY' \"$CONSTANTS_SWIFT\" | awk -F'\"' '{print $2}')\n\n# Update GoogleServices-Info.plist with the API_KEY\nPLIST=\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\n\nif [ -n \"$API_KEY\" ]; then\n    /usr/libexec/PlistBuddy -c \"Set :API_KEY $API_KEY\" \"$PLIST\"\nelse\n    echo \"API Key not found. Please check Constants.swift\"\n    exit 1\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		91C921A32C6CB32700F92FEA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				91C921C52C6E0C5100F92FEA /* Constants.swift in Sources */,
-				91C921AD2C6CB32700F92FEA /* ContentView.swift in Sources */,
+				91C921CA2C6E194E00F92FEA /* Util.swift in Sources */,
 				91C921AB2C6CB32700F92FEA /* iOS_login_firebaseApp.swift in Sources */,
 				91C921C32C6CDF6600F92FEA /* LoginView.swift in Sources */,
 				91C921B92C6CB72F00F92FEA /* ContentViewModel.swift in Sources */,
+				91C921CF2C6E391600F92FEA /* HomePageView.swift in Sources */,
+				91C921CD2C6E37A300F92FEA /* StartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +335,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -369,6 +365,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

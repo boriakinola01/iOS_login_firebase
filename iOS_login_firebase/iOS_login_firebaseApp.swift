@@ -11,10 +11,19 @@ import FirebaseAuth
 
 
 class AppDelegate: NSObject, UIApplicationDelegate {
+    let util = Util()
+    let consts = Constants()
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-    print("Firebase configured!")
+      
+      let success = util.editPlistValue(plistPath: "GoogleService-Info.plist", key: "API_KEY", newValue: consts.FIREBASE_API_KEY)
+      
+      if success {
+          FirebaseApp.configure()
+          print("Firebase configured!")
+      }
+    
+    
 
     return true
   }
@@ -27,7 +36,7 @@ struct iOS_login_firebaseApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartView()
         }
     }
 }

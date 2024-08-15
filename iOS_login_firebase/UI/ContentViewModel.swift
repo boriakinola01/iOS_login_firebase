@@ -14,9 +14,8 @@ enum AuthState {
     case notAuthenticated
 }
 
-class ContentViewModel: ObservableObject {
+class HomePageViewModel: ObservableObject {
     
     @Published var authState = AuthState.none
-    
     
 }

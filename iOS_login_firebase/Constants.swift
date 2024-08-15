@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Constants {
+class Constants {
     let FIREBASE_API_KEY = "AIzaSyD1sXWdCHrqIMkGpCFLI2QtzmZpEwh0kvU"
 }
