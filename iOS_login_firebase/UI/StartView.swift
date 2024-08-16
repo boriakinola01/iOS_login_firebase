@@ -14,17 +14,24 @@ struct StartView: View {
     var body: some View {
         
         ZStack {
-            HomePageView()
+            HomePageView(showSignInView: $showSignInView)
         }
         .onAppear {
             let authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
+            
+            if (authUser != nil) {
+                print("User authenticated")
+            } else {
+                print("User not authenticated")
+            }
+            
             self.showSignInView = authUser == nil
         }
         .fullScreenCover(isPresented: $showSignInView){
             NavigationView {
                 VStack {
                     NavigationLink {
-                        LoginView()
+                        LoginView(showSignInView: $showSignInView)
                     } label: {
                         Text("Sign in with Email")
                             .font(.headline)

@@ -10,28 +10,53 @@ import Foundation
 final class LoginViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
+    @Published var showSignInView: Bool = true
     
     
-    func signIn() {
+    func signIn() -> Bool{
         
 //      Include some validation for email and passwowrd authentications here
 //
         guard !email.isEmpty, !password.isEmpty else {
             print("No email or passowrd found.")
-            return
+            return false
         }
-        
         
         Task {
             do {
                 let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
                 print("Success")
                 print(returnedUserData)
+                return true
             } catch {
                 print("Error: \(error)")
+                return false
             }
         }
         
+        return true
     }
+    
+    func signUp() {
+        
+        guard !email.isEmpty, !password.isEmpty else {
+            print("No email or passowrd found.")
+            return
+        }
+        
+        Task {
+            do {
+                let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
+                print("Success")
+                print(returnedUserData)
+                return true
+            } catch {
+                print("Error: \(error)")
+                return false
+            }
+        }
+    }
+    
+    
 }
 

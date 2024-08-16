@@ -9,10 +9,26 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject private var viewModel = LoginViewModel()
+    @Binding var showSignInView: Bool
+    
+    @State private var navigationLink: NavigationLinks?
+
+    private enum NavigationLinks: Int {
+        case homeStraight
+    }
     
     
     var body: some View {
         NavigationView {
+//            NavigationLink(
+//                destination: HomePageView(showSignInView: $showSignInView),
+//                tag: NavigationLinks.homeStraight,
+//                selection: $navigationLink
+//            ) {
+//                EmptyView()
+//            }
+//            .opacity(0)
+            
             VStack {
                 TextField("Email...", text: $viewModel.email)
                     .padding()
@@ -25,7 +41,9 @@ struct LoginView: View {
                     .cornerRadius(10)
                 
                 Button {
-                    viewModel.signIn()
+                    var signedIn = viewModel.signIn()
+                    showSignInView = false
+                    
                 } label: {
                     Text("Sign in")
                         .font(.headline)
@@ -40,6 +58,10 @@ struct LoginView: View {
             }
             .padding()
             .navigationTitle("Sign in")
+//            .fullScreenCover(isPresented: $showSignInView) {
+//                HomePageView(showSignInView: <#T##Binding<Bool>#>)
+//            }
+            
         }
     }
 }

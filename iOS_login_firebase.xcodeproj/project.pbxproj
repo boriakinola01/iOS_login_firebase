@@ -22,6 +22,8 @@
 		91C921F42C6F4CC300F92FEA /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921F32C6F4CC300F92FEA /* AuthenticationManager.swift */; };
 		91C921F62C6F4DC100F92FEA /* AuthDataEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921F52C6F4DC100F92FEA /* AuthDataEntity.swift */; };
 		91C921F82C6F505800F92FEA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921F72C6F505800F92FEA /* LoginViewModel.swift */; };
+		91C921FB2C6F5EC300F92FEA /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921FA2C6F5EC300F92FEA /* HomePageViewModel.swift */; };
+		91C921FE2C6F643E00F92FEA /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921FD2C6F643E00F92FEA /* UIState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		91C921F32C6F4CC300F92FEA /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		91C921F52C6F4DC100F92FEA /* AuthDataEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataEntity.swift; sourceTree = "<group>"; };
 		91C921F72C6F505800F92FEA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		91C921FA2C6F5EC300F92FEA /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
+		91C921FD2C6F643E00F92FEA /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		91C921A92C6CB32700F92FEA /* iOS_login_firebase */ = {
 			isa = PBXGroup;
 			children = (
+				91C921FC2C6F642C00F92FEA /* DI */,
 				91C921AA2C6CB32700F92FEA /* iOS_login_firebaseApp.swift */,
 				91C921C42C6E0C5100F92FEA /* Constants.swift */,
 				91C921C92C6E194E00F92FEA /* Util.swift */,
@@ -105,8 +110,8 @@
 		91C921CB2C6E366400F92FEA /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				91C921F92C6F5EAE00F92FEA /* HomePage */,
 				91C921D42C6F44A400F92FEA /* Login */,
-				91C921CE2C6E391600F92FEA /* HomePageView.swift */,
 				91C921CC2C6E37A300F92FEA /* StartView.swift */,
 			);
 			path = UI;
@@ -152,6 +157,23 @@
 				91C921F32C6F4CC300F92FEA /* AuthenticationManager.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		91C921F92C6F5EAE00F92FEA /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				91C921CE2C6E391600F92FEA /* HomePageView.swift */,
+				91C921FA2C6F5EC300F92FEA /* HomePageViewModel.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		91C921FC2C6F642C00F92FEA /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				91C921FD2C6F643E00F92FEA /* UIState.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +259,8 @@
 				91C921CA2C6E194E00F92FEA /* Util.swift in Sources */,
 				91C921F82C6F505800F92FEA /* LoginViewModel.swift in Sources */,
 				91C921AB2C6CB32700F92FEA /* iOS_login_firebaseApp.swift in Sources */,
+				91C921FB2C6F5EC300F92FEA /* HomePageViewModel.swift in Sources */,
+				91C921FE2C6F643E00F92FEA /* UIState.swift in Sources */,
 				91C921F42C6F4CC300F92FEA /* AuthenticationManager.swift in Sources */,
 				91C921F62C6F4DC100F92FEA /* AuthDataEntity.swift in Sources */,
 				91C921C32C6CDF6600F92FEA /* LoginView.swift in Sources */,

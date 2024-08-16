@@ -17,11 +17,20 @@ final class AuthenticationManager {
         return  AuthDataEntity(user: authDataResult.user)
     }
     
+    func signInUser(email: String, password: String) async throws -> AuthDataEntity{
+        let authDataResult = try await Auth.auth().signIn(withEmail: email, password: password)
+        return  AuthDataEntity(user: authDataResult.user)
+    }
+    
     func getAuthenticatedUser() throws  -> AuthDataEntity {
         guard let user = Auth.auth().currentUser else {
             throw URLError(.badServerResponse)
         }
         
         return AuthDataEntity(user: user)
+    }
+    
+    func signOut() throws {
+       try Auth.auth().signOut()
     }
 }
