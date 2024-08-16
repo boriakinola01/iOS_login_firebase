@@ -16,14 +16,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
       
-      let success = util.editPlistValue(plistPath: "GoogleService-Info.plist", key: "API_KEY", newValue: consts.FIREBASE_API_KEY)
-      
-      if success {
-          FirebaseApp.configure()
-          print("Firebase configured!")
-      }
-    
-    
+      FirebaseApp.configure()
+      print("Firebase configured!")
 
     return true
   }
@@ -36,7 +30,7 @@ struct iOS_login_firebaseApp: App {
     
     var body: some Scene {
         WindowGroup {
-            StartView()
+            HomePageView()
         }
     }
 }

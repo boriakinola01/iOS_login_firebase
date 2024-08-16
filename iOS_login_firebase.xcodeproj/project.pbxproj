@@ -20,6 +20,10 @@
 		91C921CA2C6E194E00F92FEA /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921C92C6E194E00F92FEA /* Util.swift */; };
 		91C921CD2C6E37A300F92FEA /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921CC2C6E37A300F92FEA /* StartView.swift */; };
 		91C921CF2C6E391600F92FEA /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921CE2C6E391600F92FEA /* HomePageView.swift */; };
+		91C921D32C6E3BCC00F92FEA /* InitialStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921D22C6E3BCC00F92FEA /* InitialStartView.swift */; };
+		91C921F42C6F4CC300F92FEA /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921F32C6F4CC300F92FEA /* AuthenticationManager.swift */; };
+		91C921F62C6F4DC100F92FEA /* AuthDataEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921F52C6F4DC100F92FEA /* AuthDataEntity.swift */; };
+		91C921F82C6F505800F92FEA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C921F72C6F505800F92FEA /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,10 @@
 		91C921C92C6E194E00F92FEA /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		91C921CC2C6E37A300F92FEA /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		91C921CE2C6E391600F92FEA /* HomePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
+		91C921D22C6E3BCC00F92FEA /* InitialStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialStartView.swift; sourceTree = "<group>"; };
+		91C921F32C6F4CC300F92FEA /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		91C921F52C6F4DC100F92FEA /* AuthDataEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataEntity.swift; sourceTree = "<group>"; };
+		91C921F72C6F505800F92FEA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,14 +78,15 @@
 		91C921A92C6CB32700F92FEA /* iOS_login_firebase */ = {
 			isa = PBXGroup;
 			children = (
-				91C921CB2C6E366400F92FEA /* UI */,
 				91C921AA2C6CB32700F92FEA /* iOS_login_firebaseApp.swift */,
-				91C921BA2C6CBE0300F92FEA /* GoogleService-Info.plist */,
+				91C921C42C6E0C5100F92FEA /* Constants.swift */,
+				91C921C92C6E194E00F92FEA /* Util.swift */,
+				91C921D52C6F45AD00F92FEA /* Data */,
+				91C921CB2C6E366400F92FEA /* UI */,
 				91C921AE2C6CB33100F92FEA /* Assets.xcassets */,
 				91C921B02C6CB33100F92FEA /* Preview Content */,
-				91C921C42C6E0C5100F92FEA /* Constants.swift */,
+				91C921BA2C6CBE0300F92FEA /* GoogleService-Info.plist */,
 				91C921C72C6E12B900F92FEA /* .gitignore */,
-				91C921C92C6E194E00F92FEA /* Util.swift */,
 			);
 			path = iOS_login_firebase;
 			sourceTree = "<group>";
@@ -100,12 +109,55 @@
 		91C921CB2C6E366400F92FEA /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				91C921C22C6CDF6600F92FEA /* LoginView.swift */,
+				91C921D42C6F44A400F92FEA /* Login */,
 				91C921B82C6CB72F00F92FEA /* ContentViewModel.swift */,
 				91C921CE2C6E391600F92FEA /* HomePageView.swift */,
 				91C921CC2C6E37A300F92FEA /* StartView.swift */,
+				91C921D22C6E3BCC00F92FEA /* InitialStartView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		91C921D42C6F44A400F92FEA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				91C921C22C6CDF6600F92FEA /* LoginView.swift */,
+				91C921F72C6F505800F92FEA /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		91C921D52C6F45AD00F92FEA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				91C921D82C6F468300F92FEA /* Service */,
+				91C921D72C6F467300F92FEA /* Domain */,
+				91C921D62C6F45CD00F92FEA /* Entity */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		91C921D62C6F45CD00F92FEA /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				91C921F52C6F4DC100F92FEA /* AuthDataEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		91C921D72C6F467300F92FEA /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		91C921D82C6F468300F92FEA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				91C921F32C6F4CC300F92FEA /* AuthenticationManager.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,8 +241,12 @@
 			files = (
 				91C921C52C6E0C5100F92FEA /* Constants.swift in Sources */,
 				91C921CA2C6E194E00F92FEA /* Util.swift in Sources */,
+				91C921F82C6F505800F92FEA /* LoginViewModel.swift in Sources */,
 				91C921AB2C6CB32700F92FEA /* iOS_login_firebaseApp.swift in Sources */,
+				91C921F42C6F4CC300F92FEA /* AuthenticationManager.swift in Sources */,
+				91C921F62C6F4DC100F92FEA /* AuthDataEntity.swift in Sources */,
 				91C921C32C6CDF6600F92FEA /* LoginView.swift in Sources */,
+				91C921D32C6E3BCC00F92FEA /* InitialStartView.swift in Sources */,
 				91C921B92C6CB72F00F92FEA /* ContentViewModel.swift in Sources */,
 				91C921CF2C6E391600F92FEA /* HomePageView.swift in Sources */,
 				91C921CD2C6E37A300F92FEA /* StartView.swift in Sources */,

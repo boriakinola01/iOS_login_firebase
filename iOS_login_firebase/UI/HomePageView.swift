@@ -9,12 +9,22 @@ import SwiftUI
 
 struct HomePageView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                NavigationLink {
+                    LoginView()
+                } label: {
+                    Text("Sign in with Email")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 60)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                }
+            }
+            .padding()
+            .navigationTitle("Home")
         }
-        .padding()
     }
 }
