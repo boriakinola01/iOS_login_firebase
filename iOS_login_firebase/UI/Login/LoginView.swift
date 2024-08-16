@@ -25,7 +25,7 @@ struct LoginView: View {
                     .cornerRadius(10)
                 
                 Button {
-                    
+                    viewModel.signIn()
                 } label: {
                     Text("Sign in")
                         .font(.headline)

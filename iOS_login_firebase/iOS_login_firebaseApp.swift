@@ -30,7 +30,7 @@ struct iOS_login_firebaseApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomePageView()
+            StartView()
         }
     }
 }

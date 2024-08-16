@@ -7,24 +7,10 @@
 
 import SwiftUI
 
+
 struct HomePageView: View {
     var body: some View {
-        NavigationView {
-            VStack {
-                NavigationLink {
-                    LoginView()
-                } label: {
-                    Text("Sign in with Email")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 60)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                }
-            }
-            .padding()
-            .navigationTitle("Home")
-        }
+        Text("Hi there!")
     }
+    
 }

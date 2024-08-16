@@ -25,6 +25,10 @@ final class LoginViewModel: ObservableObject {
         Task {
             do {
                 let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
+                print("Success")
+                print(returnedUserData)
+            } catch {
+                print("Error: \(error)")
             }
         }
         
