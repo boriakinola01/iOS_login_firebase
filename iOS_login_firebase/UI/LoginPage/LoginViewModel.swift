@@ -40,16 +40,20 @@ final class LoginViewModel: ObservableObject {
         Signing up a user
      */
     
-    func signUp() {
+    func signUp() async throws{
         
         guard !email.isEmpty, !password.isEmpty else {
             print("No email or passowrd found.")
             return
         }
         
+        
+        let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
+        try await UserManager.shared.createNewUser(auth: returnedUserData)
+        
         Task {
             do {
-                let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
+                
                 print("Success")
                 print(returnedUserData)
                 return true

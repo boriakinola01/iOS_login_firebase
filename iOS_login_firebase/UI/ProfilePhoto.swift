@@ -14,15 +14,14 @@ struct ProfilePhoto: View {
     var body: some View {
         
         ZStack {
-            NavigationLink(destination: SettingsView(),
-                           label: {
-                    Image("person.circle")
-                    .resizable()
-                    .frame(width: 32, height: 32)
-                    .opacity(1)
-                }
-            )
-        }
+                Image(systemName: "person.circle")
+                .resizable()
+                .frame(width: 32, height: 32)
+                .accentColor(.blue)
+                .opacity(1)
+            }
+            
     }
 }
+
 

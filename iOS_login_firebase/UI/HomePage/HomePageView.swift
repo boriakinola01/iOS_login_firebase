@@ -11,8 +11,6 @@ import SwiftUI
 struct HomePageView: View {
     
     @StateObject private var viewModel = HomePageViewModel()
-    
-    
     @Binding var showSignInView: Bool
     
     var body: some View {
@@ -21,23 +19,24 @@ struct HomePageView: View {
             Text("Hi there!")
             
             Spacer()
-            
-            Button("Log out") {
-                Task {
-                    do {
-                        try viewModel.logOut()
-                        showSignInView = true
-                    } catch {
-                        print(error)
-                    }
-                }
-                print("Logged out.......")
-            }
-            
-            Spacer()
+
         }
         .onAppear()
-        .navigationHomeScreeView(title: "Welcome ")
+        .toolbar {
+            
+            ToolbarItem(placement: .principal) {
+                Text("Home Page").scaledToFit()
+            }
+            
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink {
+                    SettingsView(showSignInView: $showSignInView)
+                } label: {
+                    ProfilePhoto()
+                }
+            }
+        }
+        //.navigationHomeScreeView(title: "Welcome ", showSignInView: showSignInView)
     };
     
 }

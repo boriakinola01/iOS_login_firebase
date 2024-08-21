@@ -14,6 +14,7 @@ enum NavigationBarItem {
     
     static var homeText: some View {
         Text("Home Page")
+            .scaledToFit()
     }
     
     static var profilePhoto: some View {
@@ -22,7 +23,7 @@ enum NavigationBarItem {
     
     static func close() -> some View {
         Button(
-            action: {print("Button oressed!!!")},
+            action: {print("Button pressed!!!")},
             label: {
                 Image("back")
             }
@@ -34,7 +35,7 @@ enum NavigationBarItem {
 extension View {
     
     @ViewBuilder
-    func navigationHomeScreeView(title: String? = nil) -> some View {
+    func navigationHomeScreeView(title: String? = nil, showSignInView: Bool) -> some View {
         self.modifier(NavigationHomeScreenViewModifier(title: title))
     }
 }

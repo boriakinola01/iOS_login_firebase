@@ -9,12 +9,12 @@ import Foundation
 import FirebaseAuth
 
 struct AuthDataEntity {
-    var uid: String
+    var id: String
     var email: String?
     var photoUrl: String?
     
     init(user: User) {
-        self.uid = user.uid
+        self.id = user.uid
         self.email = user.email
         self.photoUrl = user.photoURL?.absoluteString
     }

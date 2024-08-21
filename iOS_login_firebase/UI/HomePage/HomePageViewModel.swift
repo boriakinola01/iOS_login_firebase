@@ -9,7 +9,5 @@ import Foundation
 
 final class HomePageViewModel: ObservableObject {
     
-    func logOut() throws {
-        try AuthenticationManager.shared.signOut()
-    }
+    
 }

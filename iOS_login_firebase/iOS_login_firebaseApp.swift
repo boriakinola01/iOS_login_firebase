@@ -11,7 +11,6 @@ import FirebaseAuth
 
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    let util = Util()
     let consts = Constants()
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {

@@ -17,7 +17,6 @@ struct LoginView: View {
         case homeStraight
     }
     
-    
     var body: some View {
         NavigationView {
             VStack {
