@@ -16,34 +16,28 @@ struct HomePageView: View {
     @Binding var showSignInView: Bool
     
     var body: some View {
-        Text("Hi there!")
+        ZStack{
         
-        Spacer(minLength: 0.5)
-        
-        Button("Log out") {
-            Task {
-                do {
-                    try viewModel.logOut()
-                    showSignInView = true
-                } catch {
-                    print(error)
+            Text("Hi there!")
+            
+            Spacer()
+            
+            Button("Log out") {
+                Task {
+                    do {
+                        try viewModel.logOut()
+                        showSignInView = true
+                    } catch {
+                        print(error)
+                    }
                 }
+                print("Logged out.......")
             }
-            print("Logged out.......")
-            goHome()
+            
+            Spacer()
         }
-        
-        Spacer()
-    }
-    
-    func goHome() {
-        
-        let scenes = UIApplication.shared.connectedScenes.first as? UIWindowScene
-        
-        if let window = scenes?.windows.first {
-            window.rootViewController = UIHostingController(rootView: LoginView(showSignInView: $showSignInView))
-            window.makeKeyAndVisible()
-        }
-    }
+        .onAppear()
+        .navigationHomeScreeView(title: "Welcome ")
+    };
     
 }

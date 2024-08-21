@@ -30,6 +30,18 @@ final class AuthenticationManager {
         return AuthDataEntity(user: user)
     }
     
+    func isUserSignedIn() -> Bool {
+        let authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
+        
+        if (authUser != nil) {
+            print("User authenticated")
+        } else {
+            print("User not authenticated")
+        }
+        
+        return authUser != nil
+    }
+    
     func signOut() throws {
        try Auth.auth().signOut()
     }

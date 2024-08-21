@@ -20,15 +20,6 @@ struct LoginView: View {
     
     var body: some View {
         NavigationView {
-//            NavigationLink(
-//                destination: HomePageView(showSignInView: $showSignInView),
-//                tag: NavigationLinks.homeStraight,
-//                selection: $navigationLink
-//            ) {
-//                EmptyView()
-//            }
-//            .opacity(0)
-            
             VStack {
                 TextField("Email...", text: $viewModel.email)
                     .padding()
@@ -41,7 +32,7 @@ struct LoginView: View {
                     .cornerRadius(10)
                 
                 Button {
-                    var signedIn = viewModel.signIn()
+                    viewModel.signIn()
                     showSignInView = false
                     
                 } label: {
@@ -58,10 +49,6 @@ struct LoginView: View {
             }
             .padding()
             .navigationTitle("Sign in")
-//            .fullScreenCover(isPresented: $showSignInView) {
-//                HomePageView(showSignInView: <#T##Binding<Bool>#>)
-//            }
-            
         }
     }
 }
