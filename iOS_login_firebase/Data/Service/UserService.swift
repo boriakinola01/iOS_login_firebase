@@ -15,44 +15,33 @@ final class UserManager {
     static let shared = UserManager()
     private init() { }
     
-    func createNewUser(auth: AuthDataEntity) async throws {
-        
-        let userData = UserEntity (
-            id: auth.id,
-            firstName: "",
-            lastName: "",
-            age: 23,
-            email: auth.email)
-        
-        
-        try await Firestore.firestore().collection("user")
-            .document(auth.id)
-            .setData(userData.toDictionary()!, merge: false)
+    private let userCollection = Firestore.firestore().collection("user")
+    
+    private func getUserDocument(userId: String) -> DocumentReference {
+        userCollection.document(userId)
     }
     
+    func createNewUser(user: UserEntity) async throws {
+        _ = getUserDocument(userId: user.id)
+            .setData(from: user, merge: false)
+    }
+    
+//    func createNewUser(auth: AuthDataEntity) async throws {
+//        
+//        let userData = UserEntity (
+//            id: auth.id,
+//            firstName: "",
+//            lastName: "",
+//            age: 23,
+//            email: auth.email)
+//        
+//        
+//        try await getUserDocument(userId: auth.id)
+//            .setData(userData.toDictionary()!, merge: false)
+//    }
     
     func getUser(userId: String) async throws -> UserEntity {
-        var resultUser = UserEntity()
-        
-        let document = Firestore.firestore().collection("user")
-            .document(userId)
-        
-        print(document)
-        
-        do {
-            return try await document.getDocument(as: UserEntity.self)
-        } catch {
-            print("Cannot initialize a userEntity object from the snapshot!!!")
-        }
-//         { result in
-//            switch result {
-//            case .success(let user):
-//                  return user
-//                case .failure(let error):
-//                  print("Cannot initialize a userEntity object from the snapshot!!!")
-//            }
-//        }
-        
-        return resultUser
+        try await getUserDocument(userId: userId).getDocument(as: UserEntity.self)
     }
+    
 }
