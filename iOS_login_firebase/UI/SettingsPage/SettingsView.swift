@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     
     @StateObject private var viewModel = SettingsViewModel()
+    @State private var didAppear: Bool = false
     @Binding var showSignInView: Bool
     
     
@@ -43,10 +44,26 @@ struct SettingsView: View {
             .background(Color.blue)
             .cornerRadius(10)
         }
-        .task{
-            try? await viewModel.loadCurrentUser()
+//        .task{
+//            try? await viewModel.loadCurrentUser()
+//        }
+        .onAppear{
+            if !didAppear {
+                viewModel.addListenerForUserProfileUpdates()
+                didAppear = true
+            }
         }
         
         
     }
+    
+    
+    /*
+        Profile Section
+     */
+    
+    
+    /*
+        Others
+     */
 }
